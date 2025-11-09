@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Idris | Portfolio</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Arial', sans-serif; background: #f9f9f9; color: #333; line-height:1.6; scroll-behavior: smooth; }
+    a { text-decoration:none; color: inherit; }
+
+    header { background:#fff; padding:30px 20px; text-align:center; box-shadow:0 2px 10px rgba(0,0,0,0.1); position:sticky; top:0; z-index:1000; }
+    header h1 { font-size:2.2em; margin-bottom:5px; }
+    header p { color:#666; font-size:1.1em; }
+    .profile-img { width:150px; height:150px; border-radius:50%; display:block; margin:20px auto; object-fit:cover; transition: transform 0.3s; }
+    .profile-img:hover { transform: scale(1.1); }
+
+    nav { display:flex; justify-content:center; background:#eee; padding:10px 0; }
+    nav a { margin:0 20px; font-weight:bold; transition: color 0.3s; }
+    nav a:hover { color:#007BFF; }
+
+    .container { max-width:900px; margin:60px auto; padding:0 20px; }
+    .section-title { font-size:2em; margin-bottom:30px; border-bottom:3px solid #007BFF; display:inline-block; padding-bottom:5px; }
+
+    .skills, .projects { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; }
+    .skill, .project { background:#fff; padding:20px; border-radius:10px; flex:1 1 calc(45%); box-shadow:0 4px 15px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
+    .skill:hover, .project:hover { transform: translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.15); }
+
+    .contact-info { text-align:center; font-size:1.2em; }
+    .contact-info a { color:#25D366; font-weight:bold; }
+
+    footer { background:#eee; text-align:center; padding:25px 0; margin-top:40px; }
+
+    .fade-in { opacity:0; transform: translateY(20px); transition: opacity 1s ease-out, transform 1s ease-out; }
+    .fade-in.visible { opacity:1; transform: translateY(0); }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Mohamed Idris</h1>
+    <p>طالب في الإعدادية | Graphic Designer & Video Editor</p>
+    <img class="profile-img" src="https://media-hbe1-1.cdn.whatsapp.net/v/t61.24694-24/517719026_1239348787935037_1435800132781757641_n.jpg?ccb=11-4&oh=01_Q5Aa3AHvDb-Yw0-MBDO4wS1_p7uOmoL5ar8UtyoMDnOs8zolnw&oe=691D64BB&_nc_sid=5e03e0&_nc_cat=111" alt="Profile Image">
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container fade-in" id="home">
+    <h2 class="section-title">About Me</h2>
+    <p>Hello! I'm Mohamed Idris, a student interested in graphic design and video editing. I enjoy creating visually appealing designs and creative video content.</p>
+  </div>
+
+  <div class="container fade-in" id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <div class="skill">Graphic Design</div>
+      <div class="skill">Video Editing</div>
+    </div>
+  </div>
+
+  <div class="container fade-in" id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects">
+      <div class="project">Project 1</div>
+      <div class="project">Project 2</div>
+      <div class="project">Project 3</div>
+      <div class="project">Project 4</div>
+    </div>
+  </div>
+
+  <div class="container fade-in" id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-info">
+      WhatsApp: <a href="https://wa.me/201116384861" target="_blank">+20 11 16384861</a>
+    </p>
+  </div>
+
+  <footer>
+    &copy; 2025 Mohamed Idris. All rights reserved.
+  </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const options = { threshold: 0.1 };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, options);
+
+    faders.forEach(fader => { appearOnScroll.observe(fader); });
+  </script>
+
+</body>
+</html>
