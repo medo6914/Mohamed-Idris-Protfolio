@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>أعمالي — محمد إدريس</title>
+  <style>
+    :root{--bg:#f6f7fb;--card:#fff;--accent:#0b74de;--text:#111;--muted:#666;font-family:Inter,Segoe UI,Arial}
+    body{margin:0;background:var(--bg);color:var(--text)}
+    header{padding:14px 18px;background:var(--card);box-shadow:0 2px 12px rgba(0,0,0,.04);display:flex;justify-content:space-between;align-items:center}
+    .container{max-width:1100px;margin:20px auto;padding:0 16px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+    .card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:0 8px 24px rgba(12,20,40,.05);cursor:pointer}
+    .thumb{height:160px;background:#e9eef8;background-size:cover;background-position:center}
+    .card-body{padding:12px}
+    footer{padding:18px;text-align:center;color:var(--muted);margin-top:18px}
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>أعمالي — محمد إدريس</strong></div>
+    <nav>
+      <a href="index.html" style="color:var(--accent);text-decoration:none">الرئيسية</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section style="margin-bottom:12px">
+      <div style="background:var(--card);padding:12px;border-radius:10px">
+        <p style="margin:0;color:var(--muted)">هنا قائمة بكل مشاريعي. اضغط على أي مشروع لعرض التفاصيل.</p>
+      </div>
+    </section>
+
+    <section class="grid" id="projectsGrid"></section>
+  </main>
+
+  <footer>© <span id="year"></span> محمد إدريس</footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const projects = [
+      {
+        slug:'project-portfolio.html',
+        title:'بورتفوليو شخصي — Mohamed Idris',
+        meta:'موقع شخصي/بورتفوليو — HTML, CSS, JS',
+        img:'https://via.placeholder.com/900x600?text=Portfolio+Project',
+        short:'موقع بورتفوليو يعرض الأعمال، سيرة ذاتية قابلة للتحميل، ونموذج تواصل.'
+      },
+      {
+        slug:'project-portfolio.html',
+        title:'تطبيق تتبع الوزن',
+        meta:'Web App — React • Node',
+        img:'https://via.placeholder.com/900x600?text=Weight+Tracker',
+        short:'تطبيق يسمح للمستخدم بتسجيل و تتبع الوزن عبر الوقت مع مخططات.'
+      },
+      {
+        slug:'project-portfolio.html',
+        title:'نظام تسجيل دخول آمن',
+        meta:'Auth System — Node.js',
+        img:'https://via.placeholder.com/900x600?text=Auth+System',
+        short:'نظام مصادقة آمن بممارسات حديثة (JWT, bcrypt).'
+      }
+    ];
+
+    const grid = document.getElementById('projectsGrid');
+    projects.forEach(p=>{
+      const card = document.createElement('article');
+      card.className='card';
+      card.innerHTML = `
+        <div class="thumb" style="background-image:url('${p.img}');"></div>
+        <div class="card-body">
+          <h3 style="margin:0 0 6px">${p.title}</h3>
+          <div style="color:var(--muted);font-size:13px">${p.meta}</div>
+          <p style="margin-top:8px;color:var(--muted);font-size:14px">${p.short}</p>
+        </div>`;
+      card.addEventListener('click',()=> window.location.href = p.slug);
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
