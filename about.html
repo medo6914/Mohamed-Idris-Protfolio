@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>من أنا — محمد إدريس</title>
+  <style>
+    body{font-family:Inter,Arial;padding:0;margin:0;background:#f6f7fb;color:#111}
+    header{background:#fff;padding:14px 18px;box-shadow:0 2px 10px rgba(0,0,0,.03)}
+    .container{max-width:900px;margin:22px auto;padding:0 16px}
+    .card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 6px 20px rgba(12,20,40,.04)}
+    footer{color:#666;text-align:center;padding:18px;margin-top:18px}
+  </style>
+</head>
+<body>
+  <header><a href="index.html" style="color:#0b74de;text-decoration:none">← الرئيسية</a></header>
+  <main class="container">
+    <div class="card">
+      <h1 style="margin-top:0">محمد إدريس</h1>
+      <p style="color:#444">مهندس أمن سيبراني ومطوّر ويب. خبرة في اختبار الاختراق، تحليل الثغرات، وبناء واجهات ومواقع آمنة وسريعة.</p>
+
+      <h3>المهارات</h3>
+      <ul>
+        <li>اختبار اختراق (PenTesting) وأمن تطبيقات الويب</li>
+        <li>تطوير واجهات مستخدم (HTML, CSS, JavaScript)</li>
+        <li>Node.js — APIs و Authentication</li>
+      </ul>
+
+      <h3>تعليم وخبرة</h3>
+      <p style="color:#666">دورات في أمن المعلومات، مشاريع حرة لعملاء محليين، والمشاركة في مسابقات CTF.</p>
+    </div>
+  </main>
+  <footer>© <span id="year"></span> محمد إدريس</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
