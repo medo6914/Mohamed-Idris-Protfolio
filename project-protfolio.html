@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>تفاصيل المشروع — بورتفوليو محمد إدريس</title>
+  <style>
+    :root{--bg:#f7f8fb;--card:#fff;--accent:#0b74de;--muted:#666}
+    body{margin:0;background:var(--bg);font-family:Inter,Arial,Segoe UI}
+    header{background:var(--card);padding:12px 16px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 14px rgba(0,0,0,.03)}
+    .container{max-width:1000px;margin:22px auto;padding:0 16px}
+    .hero{display:grid;grid-template-columns:1fr 320px;gap:16px}
+    .screenshot{height:320px;border-radius:8px;background:#e9eef8;background-size:cover;background-position:center}
+    .meta-row{display:flex;justify-content:space-between;gap:8px;margin:8px 0;font-size:14px}
+    .btn{display:inline-block;padding:10px 12px;border-radius:8px;text-decoration:none;background:var(--accent);color:#fff}
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <header>
+    <div><a href="projects.html" style="text-decoration:none;color:var(--accent)">← العودة للأعمال</a></div>
+    <div style="color:var(--muted)">تفاصيل المشروع</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1 style="margin-top:0">بورتفوليو شخصي — Mohamed Idris</h1>
+        <p style="color:var(--muted)">موقع بورتفوليو لعرض السيرة الذاتية، المشاريع، ومعلومات الاتصال. مهيأ للعرض على أجهزة الحاسب والهواتف.</p>
+
+        <div style="margin-top:12px;background:var(--card);padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(12,20,40,.04)">
+          <div class="meta-row"><strong>الدور</strong><span>مطور واجهات + إعداد SEO</span></div>
+          <div class="meta-row"><strong>التقنيات</strong><span>HTML • CSS • JS</span></div>
+          <div class="meta-row"><strong>المدة</strong><span>أسبوعان</span></div>
+
+          <div style="margin-top:12px">
+            <a class="btn" href="#" target="_blank" rel="noopener">عرض حي</a>
+            <a class="btn" href="#" style="background:#333;margin-right:8px" target="_blank">رمز المشروع (Git)</a>
+          </div>
+        </div>
+
+        <h3 style="margin-top:16px">المهام التي تم تنفيذها</h3>
+        <ul>
+          <li>تصميم واجهة متجاوبة وبسيطة.</li>
+          <li>كتابة محتوى SEO محلي باللغة العربية.</li>
+          <li>إضافة صفحات سياسة الخصوصية والشروط المطلوبة لـ Google AdSense.</li>
+        </ul>
+      </div>
+
+      <aside>
+        <div class="screenshot" style="background-image:url('https://via.placeholder.com/1000x700?text=Portfolio+Screenshot')"></div>
+        <p style="color:var(--muted);margin-top:8px">لقطة شاشة من الموقع</p>
+      </aside>
+    </section>
+
+    <section style="margin-top:18px">
+      <h3>ملاحظات نشر</h3>
+      <p style="color:var(--muted)">بعد رفع الملفات تأكد من وجود روابط صالحة في الهيدر والفوتر، وأضف موقعك في Google Search Console، ثم قدّم طلب AdSense عندما الموقع يحتوي على محتوى كافٍ وصفحات السياسة.</p>
+    </section>
+  </main>
+</body>
+</html>
